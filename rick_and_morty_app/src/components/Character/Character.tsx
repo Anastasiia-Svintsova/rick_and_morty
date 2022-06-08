@@ -9,7 +9,7 @@ const Character: FC<Props> = ({ character }) => {
   const { name, image } = character;
 
   return (
-    <div>
+    <div className="character">
       <img src={image} alt={`${name}`} />
       <p>{name}</p>
     </div>
