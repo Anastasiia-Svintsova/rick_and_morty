@@ -4,4 +4,10 @@
   letter-spacing: 3px;
 }
 
+.App {
+  &__header {
+    margin-bottom: 30px;
+  }
+}
+
 @import './styles/fonts.scss';

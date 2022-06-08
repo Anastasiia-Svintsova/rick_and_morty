@@ -6,7 +6,7 @@ import HomePage from './components/HomePage/HomePage';
 
 const App: FC = () => (
   <div className="App">
-    <div className="header">
+    <div className="App__header">
       <h1 className="text-center">
         Rick & Morty
       </h1>

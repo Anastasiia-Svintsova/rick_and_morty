@@ -7,6 +7,7 @@ import { Loader } from '../Loader';
 import { ICharacter } from '../../types/Character';
 import { Pagination } from '../Pagination/Pagination';
 import { Search } from '../Search/Search';
+import './HomePage.scss';
 
 const HomePage: FC = memo(() => {
   const [pagesAmount, setPagesAmount] = useState(0);
@@ -36,6 +37,8 @@ const HomePage: FC = memo(() => {
     setCharactersOnPage(data.results);
     setPagesAmount(data.info.pages);
     setCharactersAmount(data.info.count);
+
+    console.log(data.info.pages);
   }, [currentPageNumber, query]);
 
   useEffect(() => {
@@ -49,13 +52,15 @@ const HomePage: FC = memo(() => {
   return (
     <div className="home-page">
       {!!charactersAmount && (
-        <p>{`${charactersAmount} characters found`}</p>
+        <p className="home-page__subtitle">
+          {`${charactersAmount} characters found`}
+        </p>
       )}
 
       <Search setQuery={setQuery} characters={characters} />
 
       <Pagination
-        // pagesAmount={pagesAmount}
+        pagesAmount={pagesAmount}
         page={currentPageNumber}
         setPageNumber={setCurrentPageNumber}
       />
