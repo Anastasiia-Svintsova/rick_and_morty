@@ -8,6 +8,13 @@ export const request = async (url: string) => {
   return response.json();
 };
 
-export const getCharacters = async (): Promise<ICharactersResponse> => request('/character');
+export const getCharacters = async (
+  url:string = `${BASE_URL}/characters`,
+): Promise<ICharactersResponse> => {
+  const response = await fetch(url);
+  return response.json();
+};
 
-export const getCharactersOnPage = async (page: number) => request(`/character/?page=${page}`);
+export const getCharactersOnPage = async (page: number, query: string) => (
+  request(`/character/?page=${page}&name=${query}`)
+);
