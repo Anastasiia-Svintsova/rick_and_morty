@@ -1,6 +1,7 @@
 {
   "name": "rick_and_morty_app",
   "version": "0.1.0",
+  "homepage": "https://github.com/Anastasiia-Svintsova/rick_and_morty",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.12.4",
@@ -25,8 +26,10 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
-    "build": "gh-pages -d build",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
