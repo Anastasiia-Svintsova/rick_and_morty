@@ -1,0 +1,32 @@
+@import '../../styles/general.scss';
+
+.facebook {
+  &__button {    
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 20px;
+    width: 90px;
+    height: 50px;
+  }
+
+  &__user {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    color: #fff;
+    align-items: center;
+  }
+
+  &__user-image {
+    @include onSmallScreen {
+      display: none;
+    }
+  }
+
+  &__welcome {
+    margin: 0;
+  }
+}
