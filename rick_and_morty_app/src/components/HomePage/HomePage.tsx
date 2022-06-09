@@ -69,6 +69,7 @@ const HomePage: FC = memo(() => {
       <Pagination
         pagesAmount={pagesAmount}
         setPageNumber={setCurrentPageNumber}
+        page={currentPageNumber}
       />
 
       {isLoading && <Loader />}

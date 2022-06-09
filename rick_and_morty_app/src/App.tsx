@@ -8,6 +8,7 @@ import HomePage from './components/HomePage/HomePage';
 import { CharacterDetails } from './components/CharacterDetails/CharacterDetails';
 import './images/header_image.png';
 import { Header } from './components/Header/Header';
+import { Footer } from './components/Footer/Footer';
 
 const App: FC = () => (
   <div className="App">
@@ -17,6 +18,8 @@ const App: FC = () => (
       <Route path="/" element={<HomePage />} />
       <Route path="/character/:id" element={<CharacterDetails />} />
     </Routes>
+
+    <Footer />
   </div>
 );
 

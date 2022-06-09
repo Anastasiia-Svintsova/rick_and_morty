@@ -31,7 +31,7 @@ export const Search: FC<Props> = ({ characters, setQuery, setPageNumber }) => {
 
   const handleClick = useCallback(() => (
     searchParam.trim().length
-      ? (setQuery(searchParam), setPageNumber(0))
+      ? (setQuery(searchParam), setPageNumber(1))
       : setHasSearchError(true)
   ), [searchParam]);
 
@@ -39,6 +39,7 @@ export const Search: FC<Props> = ({ characters, setQuery, setPageNumber }) => {
     setQuery('');
     setSearchParam('');
     setHasSearchError(false);
+    setPageNumber(1);
   }, []);
 
   return (

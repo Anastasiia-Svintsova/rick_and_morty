@@ -1,17 +1,22 @@
-@import './CosmosBackground.scss';
+@import '../../styles/general.scss';
 
-.character-details {
+.details {
   margin-top: 60px;
 
   &__container {
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: 30px;
+
+    @include onSmallScreen {
+      flex-direction: column;
+    }
   }
 
   &__photo-container {
-    flex-basis: 400px;
+    width: 400px;
     min-width: 200px;
     position: relative;
     border: 10px solid #97CE4C;
@@ -31,6 +36,10 @@
       display: block;
       padding-bottom: 100%;
     }
+
+    @include onSmallScreen {
+      width: 300px;
+    }
   }
 
   &__photo {
@@ -45,5 +54,14 @@
   &__info {
     padding: 15px;
     font-size: 20px;
+
+    @include onSmallScreen {
+      text-align: center;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color:#97CE4C;
   }
 }

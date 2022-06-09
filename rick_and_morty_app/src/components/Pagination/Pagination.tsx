@@ -5,9 +5,10 @@ import './Pagination.scss';
 interface Props {
   pagesAmount: number,
   setPageNumber: React.Dispatch<React.SetStateAction<number>>,
+  page: number,
 }
 
-export const Pagination: FC<Props> = ({ setPageNumber, pagesAmount }) => {
+export const Pagination: FC<Props> = ({ setPageNumber, pagesAmount, page }) => {
   const onPageChange = useCallback((selectedPage: number) => {
     setPageNumber(selectedPage + 1);
   }, []);
@@ -26,6 +27,7 @@ export const Pagination: FC<Props> = ({ setPageNumber, pagesAmount }) => {
       pageRangeDisplayed={2}
       marginPagesDisplayed={1}
       onPageChange={({ selected }) => onPageChange(selected)}
+      forcePage={page - 1}
     />
   );
 };

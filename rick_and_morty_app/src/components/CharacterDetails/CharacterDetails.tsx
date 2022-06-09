@@ -28,24 +28,24 @@ export const CharacterDetails = () => {
   }, []);
 
   return (
-    <div className="character-details">
+    <div className="details">
       {isLoading && <Loader />}
       {character && (
-        <section className="character-details__container">
+        <section className="details__container">
           <div className={classNames(
-            'character-details__photo-container',
-            { 'character-details__photo-container--dead': character.status === 'Dead' },
-            { 'character-details__photo-container--unknown': character.status === 'unknown' },
+            'details__photo-container',
+            { 'details__photo-container--dead': character.status === 'Dead' },
+            { 'details__photo-container--unknown': character.status === 'unknown' },
           )}
           >
             <img
               src={character.image}
               alt={`${character.name}`}
-              className="character-details__photo"
+              className="details__photo"
             />
           </div>
 
-          <div className="character-details__info">
+          <div className="details__info">
             <p>{`Name: ${character.name}`}</p>
             <p>{`Status: ${character.status}`}</p>
             <p>{`Species: ${character.species}`}</p>
@@ -53,7 +53,10 @@ export const CharacterDetails = () => {
             <p>
               Location:
               &nbsp;
-              <a href={character.location.url}>
+              <a
+                href={character.location.url}
+                className="details__link"
+              >
                 {character.location.name}
               </a>
             </p>
@@ -61,7 +64,10 @@ export const CharacterDetails = () => {
             <p>
               First episode:
               &nbsp;
-              <a href={character.episode[0]}>
+              <a
+                href={character.episode[0]}
+                className="details__link"
+              >
                 {character.episode[0]}
               </a>
             </p>
@@ -69,7 +75,10 @@ export const CharacterDetails = () => {
             <p>
               Last episode:
               &nbsp;
-              <a href={character.episode[character.episode.length - 1]}>
+              <a
+                href={character.episode[character.episode.length - 1]}
+                className="details__link"
+              >
                 {character.episode[character.episode.length - 1]}
               </a>
             </p>
