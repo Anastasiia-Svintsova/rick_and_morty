@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Anastasiia-Svintsova/rick_and_morty/static/css/main.8f270da4.css",
+    "main.css": "/Anastasiia-Svintsova/rick_and_morty/static/css/main.1c73a374.css",
     "main.js": "/Anastasiia-Svintsova/rick_and_morty/static/js/main.ec74d21b.js",
     "static/media/header_image-2.png": "/Anastasiia-Svintsova/rick_and_morty/static/media/header_image-2.f65c24229fb3bb4f2e61.png",
     "static/media/header_image.png": "/Anastasiia-Svintsova/rick_and_morty/static/media/header_image.7f8d9fce0623cae447d4.png",
     "index.html": "/Anastasiia-Svintsova/rick_and_morty/index.html",
-    "main.8f270da4.css.map": "/Anastasiia-Svintsova/rick_and_morty/static/css/main.8f270da4.css.map",
+    "main.1c73a374.css.map": "/Anastasiia-Svintsova/rick_and_morty/static/css/main.1c73a374.css.map",
     "main.ec74d21b.js.map": "/Anastasiia-Svintsova/rick_and_morty/static/js/main.ec74d21b.js.map"
   },
   "entrypoints": [
-    "static/css/main.8f270da4.css",
+    "static/css/main.1c73a374.css",
     "static/js/main.ec74d21b.js"
   ]
 }
