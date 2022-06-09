@@ -1,9 +1,33 @@
-.search-form {
+.search {
+  position: relative;
   display: flex;
+  gap: 30px;
   justify-content: center;
-  margin-bottom: 10px;
+  align-items: center;
+  margin-bottom: 40px;
+
+  &__form {
+    flex-basis: 500px;
+    display: flex;
+    justify-content: center;
+  }  
 
   &__input {
-    width: 40%;
+    width: 100%;
+  }
+
+  &__button {
+    height: 50px;
+    flex-shrink: 0;
+  }
+
+  &__error {
+    $font-size: 12px;
+  
+    margin: 0;
+    font-size: $font-size;
+    position: absolute;
+    bottom: -$font-size;
+    color: red;
   }
 }

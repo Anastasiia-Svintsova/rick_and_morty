@@ -34,11 +34,16 @@ const HomePage: FC = memo(() => {
     setIsLoading(true);
     const data = await getCharactersOnPage(currentPageNumber, query);
     setIsLoading(false);
-    setCharactersOnPage(data.results);
-    setPagesAmount(data.info.pages);
-    setCharactersAmount(data.info.count);
 
-    console.log(data.info.pages);
+    if (data.results) {
+      setCharactersOnPage(data.results);
+      setPagesAmount(data.info.pages);
+      setCharactersAmount(data.info.count);
+    } else {
+      setCharactersOnPage([]);
+      setPagesAmount(0);
+      setCharactersAmount(0);
+    }
   }, [currentPageNumber, query]);
 
   useEffect(() => {
@@ -51,25 +56,24 @@ const HomePage: FC = memo(() => {
 
   return (
     <div className="home-page">
-      {!!charactersAmount && (
-        <p className="home-page__subtitle">
-          {`${charactersAmount} characters found`}
-        </p>
-      )}
+      <Search
+        setQuery={setQuery}
+        characters={characters}
+        setPageNumber={setCurrentPageNumber}
+      />
 
-      <Search setQuery={setQuery} characters={characters} />
+      <p className="home-page__subtitle">
+        {`${charactersAmount} characters found`}
+      </p>
 
       <Pagination
         pagesAmount={pagesAmount}
-        page={currentPageNumber}
         setPageNumber={setCurrentPageNumber}
       />
 
       {isLoading && <Loader />}
 
       {charactersOnPage && <CharacterList characters={charactersOnPage} />}
-
-      {pagesAmount}
     </div>
   );
 });

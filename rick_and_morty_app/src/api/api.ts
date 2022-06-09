@@ -18,3 +18,7 @@ export const getCharacters = async (
 export const getCharactersOnPage = async (page: number, query: string) => (
   request(`/character/?page=${page}&name=${query}`)
 );
+
+export const getSingleCharacter = async (id: number) => (
+  request(`/character/${id}`)
+);

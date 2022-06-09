@@ -4,27 +4,13 @@ import './Pagination.scss';
 
 interface Props {
   pagesAmount: number,
-  page: number,
   setPageNumber: React.Dispatch<React.SetStateAction<number>>,
 }
 
-export const Pagination: FC<Props> = ({ setPageNumber, page, pagesAmount }) => {
-  // const next = useCallback(() => {
-  //   if (page < pagesAmount) {
-  //     setPageNumber((prevPage: number) => prevPage + 1);
-  //   }
-  // }, [page]);
-
-  // const prev = useCallback(() => {
-  //   if (page > 1) {
-  //     setPageNumber((prevPage: number) => prevPage - 1);
-  //   }
-  // }, [page]);
+export const Pagination: FC<Props> = ({ setPageNumber, pagesAmount }) => {
   const onPageChange = useCallback((selectedPage: number) => {
-    setPageNumber(selectedPage);
+    setPageNumber(selectedPage + 1);
   }, []);
-
-  console.log(page);
 
   return (
     <ReactPaginate
