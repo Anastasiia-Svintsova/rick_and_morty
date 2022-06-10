@@ -7,12 +7,17 @@ interface Props {
   characters: ICharacter[],
 }
 
-export const CharacterList: FC<Props> = ({ characters }) => (
-  <ul className="character-list">
-    {characters.map((character) => (
-      <li key={character.id} className="character-list__item">
-        <Character character={character} />
-      </li>
-    ))}
-  </ul>
-);
+export const CharacterList: FC<Props> = ({ characters }) => {
+  const data = localStorage.getItem('likedCharacters');
+  const likedCharacters = data ? JSON.parse(data) : [];
+
+  return (
+    <ul className="character-list">
+      {characters.map((character) => (
+        <li key={character.id} className="character-list__item">
+          <Character character={character} likedCharacters={likedCharacters} />
+        </li>
+      ))}
+    </ul>
+  );
+};

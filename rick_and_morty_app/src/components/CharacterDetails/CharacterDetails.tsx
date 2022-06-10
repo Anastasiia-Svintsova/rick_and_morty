@@ -68,7 +68,7 @@ export const CharacterDetails = () => {
                 href={character.episode[0]}
                 className="details__link"
               >
-                {character.episode[0]}
+                {character.episode[0].split('/').slice(-1)}
               </a>
             </p>
 
@@ -79,7 +79,7 @@ export const CharacterDetails = () => {
                 href={character.episode[character.episode.length - 1]}
                 className="details__link"
               >
-                {character.episode[character.episode.length - 1]}
+                {character.episode[character.episode.length - 1].split('/').slice(-1)}
               </a>
             </p>
 

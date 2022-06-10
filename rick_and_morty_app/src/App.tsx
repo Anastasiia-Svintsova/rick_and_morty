@@ -1,5 +1,5 @@
 /* eslint-disable global-require */
-import React, { FC } from 'react';
+import React, { FC, memo } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.scss';
@@ -10,7 +10,7 @@ import './images/header_image.png';
 import { Header } from './components/Header/Header';
 import { Footer } from './components/Footer/Footer';
 
-const App: FC = () => (
+const App: FC = memo(() => (
   <div className="App">
     <Header />
 
@@ -21,6 +21,6 @@ const App: FC = () => (
 
     <Footer />
   </div>
-);
+));
 
 export default App;

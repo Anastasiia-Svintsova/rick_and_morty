@@ -8,7 +8,9 @@ export const Header: FC = memo(() => (
   <div className="header">
 
     <div className="header__container">
-      <Facebook />
+      <div className="header__facebook">
+        <Facebook />
+      </div>
 
       <div className="header__main">
         <div className="header__photo-container">

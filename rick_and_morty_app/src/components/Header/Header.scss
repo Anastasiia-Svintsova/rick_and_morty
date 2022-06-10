@@ -1,22 +1,28 @@
-@import '../../styles/CosmosBackground.scss';
+@import '../../styles/general.scss';
 
 .header {
   position: relative;
   overflow: hidden;
 
   &__container {
+    height: 100px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     align-items: center;
 
     background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+
+    @include onSmallScreen {
+      padding: 0 20px;
+      gap: 14px;
+    }
   }
 
   &__main {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 50px;
+    gap: 10px;
   }
   
   &__title {
@@ -48,6 +54,10 @@
         width: 100%;
       }
     }
+
+    @include onSmallScreen {
+      font-size: 30px;
+    }
   }
 
   &__photo-container {
@@ -60,6 +70,10 @@
       display: block;
       padding-bottom: 100%;
     }
+
+    @include onSmallScreen {
+      display: none;
+    }
   }
 
   &__photo {
@@ -71,6 +85,11 @@
     object-position: center;
   }
 
+  &__facebook {
+    display: flex;
+    justify-content: center;
+  }
+
   &__home-link {
     display: flex;
     justify-content: center;
@@ -79,5 +98,10 @@
   &__home-image {
     width: 50px;
     height: 50px;
+
+    @include onSmallScreen {
+      width: 40px;
+      height: 40px;
+    }
   }
 }

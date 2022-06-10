@@ -1,4 +1,13 @@
+@import '../../styles/general.scss';
+
 .pagination {
   display: flex;
   justify-content: center;
+  align-items: center;
+  gap: 24px;
+
+  @include onSmallScreen {
+    font-size: 12px;
+    gap: 6px;
+  }
 }

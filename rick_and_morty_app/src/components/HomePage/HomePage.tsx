@@ -8,15 +8,17 @@ import { ICharacter } from '../../types/Character';
 import { Pagination } from '../Pagination/Pagination';
 import { Search } from '../Search/Search';
 import './HomePage.scss';
+import { useLocalStorage } from '../../Hooks/UseLocalStorage';
 
 const HomePage: FC = memo(() => {
   const [pagesAmount, setPagesAmount] = useState(0);
-  const [currentPageNumber, setCurrentPageNumber] = useState(1);
+  const [currentPageNumber, setCurrentPageNumber] = useLocalStorage('currentPage', 1);
   const [charactersAmount, setCharactersAmount] = useState(0);
   const [characters, setCharacters] = useState<string[]>([]);
   const [charactersOnPage, setCharactersOnPage] = useState<ICharacter[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [query, setQuery] = useState('');
+  const [isOnlyLikedShown, setIsOnlyLikedShown] = useState(false);
 
   const loadAllCharacters = useCallback(async (url: string) => {
     const data = await getCharacters(url);
@@ -51,8 +53,10 @@ const HomePage: FC = memo(() => {
   }, []);
 
   useEffect(() => {
-    loadCharactersOnPage();
-  }, [currentPageNumber, query]);
+    if (!isOnlyLikedShown) {
+      loadCharactersOnPage();
+    }
+  }, [currentPageNumber, query, isOnlyLikedShown]);
 
   return (
     <div className="home-page">
@@ -60,21 +64,33 @@ const HomePage: FC = memo(() => {
         setQuery={setQuery}
         characters={characters}
         setPageNumber={setCurrentPageNumber}
+        setCharactersOnPage={setCharactersOnPage}
+        setIsOnlyLikedShown={setIsOnlyLikedShown}
+        isOnlyLikedShown={isOnlyLikedShown}
       />
 
-      <p className="home-page__subtitle">
-        {`${charactersAmount} characters found`}
-      </p>
+      {!isOnlyLikedShown && (
+        <>
+          <p className="home-page__subtitle">
+            {`${charactersAmount} characters found`}
+          </p>
 
-      <Pagination
-        pagesAmount={pagesAmount}
-        setPageNumber={setCurrentPageNumber}
-        page={currentPageNumber}
-      />
+          <Pagination
+            pagesAmount={pagesAmount}
+            setPageNumber={setCurrentPageNumber}
+            page={currentPageNumber}
+          />
+        </>
+
+      )}
 
       {isLoading && <Loader />}
 
-      {charactersOnPage && <CharacterList characters={charactersOnPage} />}
+      {charactersOnPage && (
+        <CharacterList
+          characters={charactersOnPage}
+        />
+      )}
     </div>
   );
 });

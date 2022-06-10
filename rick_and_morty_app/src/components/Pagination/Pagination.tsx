@@ -15,7 +15,7 @@ export const Pagination: FC<Props> = ({ setPageNumber, pagesAmount, page }) => {
 
   return (
     <ReactPaginate
-      className="pagination gap-4"
+      className="pagination"
       nextLabel="&raquo;"
       previousLabel="&laquo;"
       nextLinkClassName="btn btn-primary"

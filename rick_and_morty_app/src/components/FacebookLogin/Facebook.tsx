@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import FacebookLogin from 'react-facebook-login';
 import { Image } from 'react-bootstrap';
 import './Facebook.scss';
+import { useLocalStorage } from '../../Hooks/UseLocalStorage';
 
 export const Facebook = () => {
-  const [login, setLogin] = useState(false);
-  const [name, setName] = useState('');
-  const [picture, setPicture] = useState('');
+  const [login, setLogin] = useLocalStorage('isLogin', false);
+  const [name, setName] = useLocalStorage('userName', '');
+  const [picture, setPicture] = useLocalStorage('userPicture', '');
 
   const responseFacebook = (response: any) => {
     setPicture(response.picture.data.url);
@@ -38,7 +39,7 @@ export const Facebook = () => {
 
           <div>
             <p className="facebook__welcome">Welcome,</p>
-            {name}
+            {name.split(' ')[0]}
           </div>
         </div>
       )}
