@@ -12,8 +12,8 @@ export const Footer = () => (
       © 2022 Anastasiia Svintsova
     </a>
 
-    <div id="stars" className="header__stars" />
-    <div id="stars2" className="header__stars" />
-    <div id="stars3" className="header__stars" />
+    <div className="stars stars--small" />
+    <div className="stars stars--medium" />
+    <div className="stars stars--large" />
   </div>
 );

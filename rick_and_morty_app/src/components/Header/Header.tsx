@@ -3,7 +3,6 @@ import React, { FC, memo } from 'react';
 import { Link } from 'react-router-dom';
 import { Facebook } from '../FacebookLogin/Facebook';
 import './Header.scss';
-import '../../images/home-icon.svg';
 
 export const Header: FC = memo(() => (
   <div className="header">
@@ -46,8 +45,8 @@ export const Header: FC = memo(() => (
       </Link>
     </div>
 
-    <div id="stars" className="header__stars" />
-    <div id="stars2" className="header__stars" />
-    <div id="stars3" className="header__stars" />
+    <div className="stars stars--small" />
+    <div className="stars stars--medium" />
+    <div className="stars stars--large" />
   </div>
 ));
