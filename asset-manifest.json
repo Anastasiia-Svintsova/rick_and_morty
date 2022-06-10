@@ -1,15 +1,16 @@
 {
   "files": {
-    "main.css": "/Anastasiia-Svintsova/rick_and_morty/rick_and_morty_app/static/css/main.d880f506.css",
-    "main.js": "/Anastasiia-Svintsova/rick_and_morty/rick_and_morty_app/static/js/main.0b910e72.js",
-    "static/media/header_image-2.png": "/Anastasiia-Svintsova/rick_and_morty/rick_and_morty_app/static/media/header_image-2.f65c24229fb3bb4f2e61.png",
-    "static/media/header_image.png": "/Anastasiia-Svintsova/rick_and_morty/rick_and_morty_app/static/media/header_image.7f8d9fce0623cae447d4.png",
-    "index.html": "/Anastasiia-Svintsova/rick_and_morty/rick_and_morty_app/index.html",
-    "main.d880f506.css.map": "/Anastasiia-Svintsova/rick_and_morty/rick_and_morty_app/static/css/main.d880f506.css.map",
-    "main.0b910e72.js.map": "/Anastasiia-Svintsova/rick_and_morty/rick_and_morty_app/static/js/main.0b910e72.js.map"
+    "main.css": "/rick_and_morty/static/css/main.3208da89.css",
+    "main.js": "/rick_and_morty/static/js/main.6c939773.js",
+    "static/media/header_image-2.png": "/rick_and_morty/static/media/header_image-2.f65c24229fb3bb4f2e61.png",
+    "static/media/header_image.png": "/rick_and_morty/static/media/header_image.7f8d9fce0623cae447d4.png",
+    "static/media/home-icon.svg": "/rick_and_morty/static/media/home-icon.838ababb13089589ec5a47478e218304.svg",
+    "index.html": "/rick_and_morty/index.html",
+    "main.3208da89.css.map": "/rick_and_morty/static/css/main.3208da89.css.map",
+    "main.6c939773.js.map": "/rick_and_morty/static/js/main.6c939773.js.map"
   },
   "entrypoints": [
-    "static/css/main.d880f506.css",
-    "static/js/main.0b910e72.js"
+    "static/css/main.3208da89.css",
+    "static/js/main.6c939773.js"
   ]
 }
