@@ -31,6 +31,7 @@ export const Search: FC<Props> = ({
   const handleAutocompleteChange = useCallback((value: string) => {
     setSearchParam(value);
     setHasSearchError(false);
+    setQuery(value);
   }, [searchParam]);
 
   const handleInputChange = useCallback((event: any, value: string) => {
