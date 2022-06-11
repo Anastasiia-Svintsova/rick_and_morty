@@ -1,16 +1,24 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, {
-  FC, memo, useCallback, useEffect, useState,
+  FC,
+  memo,
+  useCallback,
+  useEffect,
+  useState,
 } from 'react';
+
+import { AiOutlineArrowUp } from 'react-icons/ai';
 import { getCharacters, getCharactersOnPage } from '../../api/api';
 import { CharacterList } from '../CharacterList/CharacterList';
-import { Loader } from '../Loader';
+import { Loader } from '../Loader/Loader';
 import { ICharacter } from '../../types/Character';
 import { Pagination } from '../Pagination/Pagination';
 import { Search } from '../Search/Search';
-import './HomePage.scss';
 import { useLocalStorage } from '../../Hooks/UseLocalStorage';
 
-const HomePage: FC = memo(() => {
+import './HomePage.scss';
+
+export const HomePage: FC = memo(() => {
   const [pagesAmount, setPagesAmount] = useState(0);
   const [currentPageNumber, setCurrentPageNumber] = useLocalStorage('currentPage', 1);
   const [charactersAmount, setCharactersAmount] = useState(0);
@@ -81,7 +89,6 @@ const HomePage: FC = memo(() => {
             page={currentPageNumber}
           />
         </>
-
       )}
 
       {isLoading && <Loader />}
@@ -91,8 +98,13 @@ const HomePage: FC = memo(() => {
           characters={charactersOnPage}
         />
       )}
+
+      <a
+        href="#"
+        className="home-page__scroll-up"
+      >
+        <AiOutlineArrowUp size={40} />
+      </a>
     </div>
   );
 });
-
-export default HomePage;

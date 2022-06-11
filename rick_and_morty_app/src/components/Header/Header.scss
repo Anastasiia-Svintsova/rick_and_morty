@@ -10,7 +10,7 @@
     grid-template-columns: repeat(3, 1fr);
     align-items: center;
 
-    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+    background: $dark-rgadient;
 
     @include onSmallScreen {
       padding: 0 20px;

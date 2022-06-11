@@ -2,11 +2,11 @@
 import React, { FC, memo } from 'react';
 import { Link } from 'react-router-dom';
 import { Facebook } from '../FacebookLogin/Facebook';
+
 import './Header.scss';
 
 export const Header: FC = memo(() => (
-  <div className="header">
-
+  <header className="header">
     <div className="header__container">
       <div className="header__facebook">
         <Facebook />
@@ -50,5 +50,5 @@ export const Header: FC = memo(() => (
     <div className="stars stars--small" />
     <div className="stars stars--medium" />
     <div className="stars stars--large" />
-  </div>
+  </header>
 ));

@@ -1,8 +1,14 @@
+@import '../../styles/general.scss';
+
 .character-list {
-  padding: 0;
+  padding: 0 20px;
   list-style: none;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 20px;
+
+  @include onSmallScreen {
+    padding: 5px;
+  }
 }

@@ -15,7 +15,10 @@ export const CharacterList: FC<Props> = ({ characters }) => {
     <ul className="character-list">
       {characters.map((character) => (
         <li key={character.id} className="character-list__item">
-          <Character character={character} likedCharacters={likedCharacters} />
+          <Character
+            character={character}
+            likedCharacters={likedCharacters}
+          />
         </li>
       ))}
     </ul>

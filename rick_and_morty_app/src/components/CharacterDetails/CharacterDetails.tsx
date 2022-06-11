@@ -3,7 +3,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getSingleCharacter } from '../../api/api';
 import { ICharacter } from '../../types/Character';
-import { Loader } from '../Loader';
+import { Loader } from '../Loader/Loader';
 import './CharacterDetails.scss';
 
 export const CharacterDetails = () => {
@@ -47,9 +47,13 @@ export const CharacterDetails = () => {
 
           <div className="details__info">
             <p>{`Name: ${character.name}`}</p>
+
             <p>{`Status: ${character.status}`}</p>
+
             <p>{`Species: ${character.species}`}</p>
+
             <p>{`Gender: ${character.gender}`}</p>
+
             <p>
               Location:
               &nbsp;

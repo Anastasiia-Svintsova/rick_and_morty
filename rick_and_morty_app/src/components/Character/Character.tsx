@@ -3,6 +3,7 @@ import React, { FC, useCallback, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FcLike, FcLikePlaceholder } from 'react-icons/fc';
 import { ICharacter } from '../../types/Character';
+
 import './Character.scss';
 
 interface Props {
@@ -42,7 +43,7 @@ const Character: FC<Props> = ({ character, likedCharacters }) => {
       : [...currentLikedCharacters, character];
 
     localStorage.setItem('likedCharacters', JSON.stringify(newLikedUsers));
-  }, [like, character]);
+  }, [like]);
 
   return (
     <div className="character">
@@ -54,7 +55,11 @@ const Character: FC<Props> = ({ character, likedCharacters }) => {
         tabIndex={0}
       >
         <div className="character__photo-container">
-          <img src={image} alt={`${name}`} className="character__photo" />
+          <img
+            src={image}
+            alt={`${name}`}
+            className="character__photo"
+          />
         </div>
 
         <div className="character__additional-info">
@@ -67,7 +72,9 @@ const Character: FC<Props> = ({ character, likedCharacters }) => {
           >
             {status}
           </p>
+
           <p>{`Name: ${name}`}</p>
+
           <p>{`${species} - ${gender}`}</p>
         </div>
       </div>

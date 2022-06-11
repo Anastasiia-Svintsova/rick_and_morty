@@ -1,8 +1,9 @@
 import React from 'react';
 import FacebookLogin from 'react-facebook-login';
 import { Image } from 'react-bootstrap';
-import './Facebook.scss';
 import { useLocalStorage } from '../../Hooks/UseLocalStorage';
+
+import './Facebook.scss';
 
 export const Facebook = () => {
   const [login, setLogin] = useLocalStorage('isLogin', false);
@@ -12,6 +13,7 @@ export const Facebook = () => {
   const responseFacebook = (response: any) => {
     setPicture(response.picture.data.url);
     setName(response.name);
+
     if (response.accessToken) {
       setLogin(true);
     } else {
@@ -35,10 +37,15 @@ export const Facebook = () => {
 
       {login && (
         <div className="facebook__user">
-          <Image src={picture} roundedCircle className="facebook__user-image" />
+          <Image
+            src={picture}
+            roundedCircle
+            className="facebook__user-image"
+          />
 
           <div>
             <p className="facebook__welcome">Welcome,</p>
+
             {name.split(' ')[0]}
           </div>
         </div>

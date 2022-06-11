@@ -1,3 +1,5 @@
+@import '../../styles/general.scss';
+
 .character {
   display: flex;
   flex-direction: column;
@@ -43,14 +45,14 @@
     color: white;
     text-transform: uppercase;
     text-align: center;
-    background-color: #97CE4C;
+    background-color: $color-green;
 
     &--unknown {
-      background-color: #7a7a75;
+      background-color: $color-gray;
     }
 
     &--dead {
-      background-color: #E89AC7;
+      background-color: $color-pink;
     }
   }
 

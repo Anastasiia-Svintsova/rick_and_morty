@@ -19,16 +19,16 @@
     width: 400px;
     min-width: 200px;
     position: relative;
-    border: 10px solid #97CE4C;
+    border: 10px solid $color-green;
     border-radius: 50%;
     overflow: hidden;
 
     &--dead {
-      border: 10px solid #E89AC7;
+      border: 10px solid $color-pink;
     }
 
     &--unknown {
-      border: 10px solid #7a7a75;
+      border: 10px solid $color-gray;
     }
 
     &::after {
@@ -63,6 +63,6 @@
 
   &__link {
     text-decoration: none;
-    color:#97CE4C;
+    color:$color-green;
   }
 }

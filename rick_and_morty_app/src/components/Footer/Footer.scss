@@ -1,9 +1,9 @@
-@import '../../styles/CosmosBackground.scss';
+@import '../../styles/general.scss';
 
 .footer {
   width: 100%;
   height: 80px;
-  margin-top: 50px;
+  margin-top: 30px;
   overflow: hidden;
 
   &__link {
@@ -18,9 +18,9 @@
     transition: 0.3s ease-in-out;
 
     &:hover {
-      color: #97CE4C;
+      color: $color-green;
     }
   }
 
-  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  background: $dark-rgadient;
 }
